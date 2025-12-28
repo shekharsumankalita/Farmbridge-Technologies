@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FarmBridge Technologies - Connecting farmers with modern agricultural technology solutions for sustainable and productive farming.">
+    <meta name="keywords" content="agriculture, farming technology, farm management, sustainable farming, agricultural solutions">
+    <meta name="author" content="FarmBridge Technologies">
+    <meta name="theme-color" content="#2d5016">
+    <title>FarmBridge Technologies - Modern Agricultural Solutions</title>
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2d5016;
+            --secondary-color: #4a7c23;
+            --accent-color: #8bc34a;
+            --light-accent: #c8e6c9;
+            --dark-text: #1a1a1a;
+            --light-text: #ffffff;
+            --gray-text: #666666;
+            --light-gray: #f5f5f5;
+            --border-color: #e0e0e0;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--dark-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--secondary-color);
+            color: var(--light-text);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--secondary-color);
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 60px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--light-text);
+            padding: 80px 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn {
+            background: var(--accent-color);
+            color: var(--dark-text);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-color);
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(139, 195, 74, 0.3);
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: var(--light-text);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--light-text);
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .secondary-btn:hover {
+            background: var(--light-text);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--light-gray);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--light-text);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-color);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            color: var(--gray-text);
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--light-text);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--light-gray);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--accent-color), transparent);
+            opacity: 0.1;
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            background: var(--light-text);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card p {
+            color: var(--gray-text);
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--light-text);
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Solutions Section */
+        .solutions-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .solutions-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .solutions-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .solutions-list li {
+            padding: 0.8rem 0;
+            color: var(--gray-text);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .solutions-list li::before {
+            content: '✓';
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .solutions-image {
+            background: linear-gradient(135deg, var(--light-accent), var(--accent-color));
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--light-gray);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--light-text);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .testimonial-stars {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-text {
+            color: var(--gray-text);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-role {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--light-text);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-text);
+            color: var(--light-text);
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-color);
+            color: var(--light-text);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #999;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 60px;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                gap: 1rem;
+                padding: 2rem 0;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .solutions-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .solutions-image {
+                min-height: 300px;
+            }
+
+            section {
+                padding: 50px 1rem;
+            }
+
+            .hero {
+                padding: 60px 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .primary-btn, .secondary-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .features-grid, .services-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <i class="fas fa-leaf"></i> FarmBridge
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact" class="cta-button">Contact Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Transform Your Farm with Technology</h1>
+            <p>FarmBridge connects farmers with cutting-edge agricultural solutions to maximize productivity, reduce costs, and ensure sustainable farming practices.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="primary-btn">Get Started</a>
+                <a href="#solutions" class="secondary-btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2 class="section-title">Why Choose FarmBridge?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Increased Productivity</h3>
+                <p>Leverage data-driven insights to optimize crop yields and make informed farming decisions.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Sustainable Practices</h3>
+                <p>Implement eco-friendly solutions that protect the environment while improving farm efficiency.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Easy to Use</h3>
+                <p>Simple, intuitive platform designed specifically for farmers of all technical levels.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Expert Support</h3>
+                <p>24/7 customer support from agricultural experts ready to help your farm succeed.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3>Secure & Reliable</h3>
+                <p>Enterprise-grade security to protect your farm data with 99.9% uptime guarantee.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Global Network</h3>
+                <p>Connect with farmers worldwide, share best practices, and access global market insights.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Crop Management</h3>
+                <p>Monitor crop health in real-time with advanced sensors and AI-powered analytics. Get actionable recommendations for pest control, irrigation, and fertilization.</p>
+            </div>
+            <div class="service-card">
+                <h3>Weather Intelligence</h3>
+                <p>Accurate hyperlocal weather forecasts and alerts to help you plan farm activities and protect your crops from adverse conditions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Market Analytics</h3>
+                <p>Access real-time market prices, demand trends, and buyer connections to maximize your profits and make better selling decisions.</p>
+            </div>
+            <div class="service-card">
+                <h3>IoT Integration</h3>
+                <p>Connect your existing farm equipment and sensors to our platform for seamless data collection and automated farm management.</p>
+            </div>
+            <div class="service-card">
+                <h3>Training & Consultation</h3>
+                <p>Expert guidance and training programs to help you adopt modern farming techniques and maximize technology benefits.</p>
+            </div>
+            <div class="service-card">
+                <h3>Resource Planning</h3>
+                <p>Optimize resource allocation including water, fertilizers, and labor to reduce costs and environmental impact.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <h2 class="section-title" style="color: var(--light-text);">Impact by Numbers</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h2>50K+</h2>
+                <p>Active Farmers</p>
+            </div>
+            <div class="stat-item">
+                <h2>2.5M</h2>
+                <p>Acres Managed</p>
+            </div>
+            <div class="stat-item">
+                <h2>35%</h2>
+                <p>Avg. Yield Increase</p>
+            </div>
+            <div class="stat-item">
+                <h2>42%</h2>
+                <p>Cost Savings</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions" id="solutions">
+        <h2 class="section-title">Comprehensive Farm Solutions</h2>
+        <div class="solutions-container">
+            <div class="solutions-content">
+                <h3>Complete Digital Transformation</h3>
+                <p>FarmBridge provides an integrated ecosystem of tools and services designed to modernize every aspect of your farming operation.</p>
+                <ul class="solutions-list">
+                    <li>Real-time crop monitoring and alerts</li>
+                    <li>Automated irrigation scheduling</li>
+                    <li>Predictive analytics for pest management</li>
+                    <li>Detailed farm mapping and planning</li>
+                    <li>Financial tracking and reporting</li>
+                    <li>Supply chain integration</li>
+                    <li>Community knowledge sharing</li>
+                    <li>Sustainability tracking</li>
+                </ul>
+                <a href="#contact" class="cta-button">Request a Demo</a>
+            </div>
+            <div class="solutions-image">
+                <i class="fas fa-seedling"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">What Farmers Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"FarmBridge completely transformed how I manage my farm. The real-time monitoring helped me increase my yields by 40% while reducing water usage significantly."</p>
+                <p class="testimonial-author">Raj Kumar</p>
+                <p class="testimonial-role">Cotton Farmer, Maharashtra</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"The weather alerts and market analytics have been game-changers for my business. I'm making better decisions and earning more profit than ever before."</p>
+                <p class="testimonial-author">Priya Singh</p>
+                <p class="testimonial-role">Vegetable Farmer, Punjab</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"The customer support team is incredible! They helped me set up everything and trained my workers. Now we're running our farm like a modern business."</p>
+                <p class="testimonial-author">Arjun Patel</p>
+                <p class="testimonial-role">Rice Farmer, Madhya Pradesh</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <h2>Ready to Transform Your Farm?</h2>
+        <p>Join thousands of farmers who are already benefiting from FarmBridge Technologies</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <button class="primary-btn" onclick="alert('Contact form would open here')">Get Started Now</button>
+            <a href="tel:+1234567890" class="secondary-btn">Call Us: +1-800-FARM-BRIDGE</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>FarmBridge Technologies</h3>
+                <p>Empowering farmers with technology to build a sustainable and prosperous agricultural future.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" title="Twitter" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" title="Instagram" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Career</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:info@farmbridge.com">info@farmbridge.com</a></li>
+                    <li><a href="tel:+1234567890">+1-800-FARM-BRIDGE</a></li>
+                    <li><a href="#">123 Agricultural Plaza, Farm City</a></li>
+                    <li><a href="#">Support Portal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FarmBridge Technologies. All rights reserved. | Built with <i class="fas fa-heart" style="color: #e74c3c;"></i> for Farmers</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .service-card, .testimonial-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                }
+            });
+        });
+
+        // Add scroll event for navbar background
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = 'var(--shadow-lg)';
+            } else {
+                header.style.boxShadow = 'var(--shadow)';
+            }
+        });
+    </script>
+</body>
+</html>
