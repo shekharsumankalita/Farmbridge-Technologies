@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side-by-Side Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            flex: 1;
+            height: calc(100vh - 180px);
+            min-height: 600px;
+        }
+
+        .preview-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .preview-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+        }
+
+        .preview-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+            font-size: 1.1em;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .preview-header .icon {
+            margin-right: 10px;
+            font-size: 1.3em;
+        }
+
+        .iframe-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #999;
+            font-style: italic;
+        }
+
+        .controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .controls button {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1em;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .controls button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .controls button:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+                gap: 20px;
+            }
+
+            .preview-section {
+                height: 500px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                margin-bottom: 15px;
+            }
+
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .header p {
+                font-size: 0.9em;
+            }
+
+            .container {
+                height: auto;
+                gap: 15px;
+            }
+
+            .preview-section {
+                height: 400px;
+            }
+
+            .preview-header {
+                padding: 12px 15px;
+                font-size: 0.95em;
+            }
+
+            .controls button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📱 Side-by-Side Preview</h1>
+        <p>View todo-app.html and index.html simultaneously</p>
+    </div>
+
+    <div class="container">
+        <div class="preview-section">
+            <div class="preview-header">
+                <span><span class="icon">✓</span>Todo App</span>
+                <span style="font-size: 0.8em; opacity: 0.8;">todo-app.html</span>
+            </div>
+            <div class="iframe-container">
+                <iframe src="todo-app.html" title="Todo App Preview"></iframe>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <div class="preview-header">
+                <span><span class="icon">🏠</span>Index Page</span>
+                <span style="font-size: 0.8em; opacity: 0.8;">index.html</span>
+            </div>
+            <div class="iframe-container">
+                <iframe src="index.html" title="Index Page Preview"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="reloadIframes()">🔄 Reload Both</button>
+        <button onclick="openExternal()">↗️ Open External</button>
+    </div>
+
+    <script>
+        function reloadIframes() {
+            const iframes = document.querySelectorAll('iframe');
+            iframes.forEach(iframe => {
+                iframe.src = iframe.src;
+            });
+        }
+
+        function openExternal() {
+            window.open('todo-app.html', '_blank');
+            window.open('index.html', '_blank');
+        }
+
+        // Handle iframe load events
+        document.querySelectorAll('iframe').forEach(iframe => {
+            iframe.addEventListener('load', function() {
+                console.log('Iframe loaded: ' + this.title);
+            });
+
+            iframe.addEventListener('error', function() {
+                console.warn('Failed to load iframe: ' + this.title);
+            });
+        });
+    </script>
+</body>
+</html>
