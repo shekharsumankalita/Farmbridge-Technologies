@@ -1,226 +1,702 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | FarmBridge Technologies</title>
-
-  <!-- Reuse your main CSS -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- About page styles -->
-  <style>
-    .about-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 6rem 1.5rem;
-    }
-
-    .about-header {
-      max-width: 800px;
-      margin-bottom: 4rem;
-    }
-
-    .about-header h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .about-header p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      opacity: 0.9;
-    }
-
-    /* ===== FOUNDERS SECTION ===== */
-    .founders-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      margin-top: 4rem;
-    }
-
-    .founder-card {
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 20px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-      transition: transform 0.4s cubic-bezier(.22,1,.36,1),
-                  box-shadow 0.4s ease;
-      opacity: 0;
-      transform: translateY(40px);
-    }
-
-    .founder-card.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .founder-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.18);
-    }
-
-    .founder-avatar {
-      width: 90px;
-      height: 90px;
-      margin: 0 auto 1rem;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #d3ff62, #6bdc9b);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #004534;
-    }
-
-    /* 👉 Replace avatar later:
-       <div class="founder-avatar">
-         <img src="path/to/photo.jpg" />
-       </div>
-    */
-
-    .founder-card h3 {
-      margin-bottom: 0.25rem;
-    }
-
-    .role {
-      font-size: 0.9rem;
-      opacity: 0.75;
-      margin-bottom: 1rem;
-    }
-
-    .founder-card p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      opacity: 0.9;
-    }
-
-    .founder-links {
-      margin-top: 1.2rem;
-      font-size: 0.9rem;
-    }
-
-    .founder-links a {
-      color: #d3ff62;
-      text-decoration: none;
-      margin: 0 0.4rem;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- You can reuse your existing header here -->
-
-  <main class="about-container">
-
-    <!-- ABOUT US -->
-    <section class="about-header">
-      <h1>About FarmBridge</h1>
-      <p>
-        FarmBridge Technologies was founded in October 2025 with a clear mission:
-        to build a transparent, technology-driven agricultural marketplace that
-        connects farmers directly with buyers. By reducing unnecessary middlemen
-        and improving price discovery, FarmBridge aims to create scalable,
-        efficient, and fair agricultural trade infrastructure built for long-term
-        impact and trust.
-      </p>
-    </section>
-
-    <!-- FOUNDERS -->
-    <section>
-      <h2>Founders</h2>
-
-      <div class="founders-grid">
-
-        <div class="founder-card">
-          <div class="founder-avatar">AB</div>
-          <h3>Abhigyan Borah</h3>
-          <div class="role">Co-Founder & CEO</div>
-          <p>
-            Technology-driven entrepreneur and CSE student at IIT Bombay.
-            Founder of Goldcrest Holdings and Chairman of the Borah Family Foundation.
-            Leads FarmBridge with a long-term vision to build scalable agricultural
-            market infrastructure.
-          </p>
-          <div class="founder-links">
-            <a href="mailto:abhigyan.borah@farmbridge.in">Email</a> |
-            <a href="http://linkedin.com/in/abhigyanborah500" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-
-        <div class="founder-card">
-          <div class="founder-avatar">BB</div>
-          <h3>Bhaskar Borah</h3>
-          <div class="role">Co-Founder & Chief Community Officer</div>
-          <p>
-            Community and grassroots leader with 3+ years of experience in
-            family business operations. Studied at CIT Kokrajhar and CREO Valley
-            Film School. Leads farmer engagement and partnerships.
-          </p>
-          <div class="founder-links">
-            <a href="mailto:bhaskar.borah@farmbridge.in">Email</a> |
-            <a href="http://linkedin.com/in/bhaskar-borah-043185221" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-
-        <div class="founder-card">
-          <div class="founder-avatar">SK</div>
-          <h3>Shekhar Suman Kalita</h3>
-          <div class="role">Co-Founder & COO</div>
-          <p>
-            Operations and execution leader with 4+ years of startup experience.
-            Studied at CIT Kokrajhar and focuses on building efficient,
-            scalable operational systems.
-          </p>
-          <div class="founder-links">
-            <a href="mailto:shekhar.kalita@farmbridge.in">Email</a> |
-            <a href="http://linkedin.com/in/shekhar-suman-kalita-936a8b1b9" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-
-        <div class="founder-card">
-          <div class="founder-avatar">RH</div>
-          <h3>Rajesh K. Hadiya</h3>
-          <div class="role">Co-Founder & CSO</div>
-          <p>
-            Ph.D. researcher at IIT Gandhinagar focused on neurodegenerative
-            diseases and cancer drug discovery. Former Abbott Healthcare
-            professional and lifelong entrepreneur leading strategy at FarmBridge.
-          </p>
-          <div class="founder-links">
-            <a href="mailto:rkm@farmbridge.in">Email</a> |
-            <a href="http://linkedin.com/in/rajesh-k-hadiya-7a59131a7" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Scroll animation -->
-  <script>
-    const cards = document.querySelectorAll('.founder-card');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('show');
-          }, index * 120);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Farmbridge Technologies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-      });
-    }, { threshold: 0.2 });
 
-    cards.forEach(card => observer.observe(card));
-  </script>
+        :root {
+            --primary-color: #10b981;
+            --secondary-color: #059669;
+            --dark-bg: #0f172a;
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --text-light: #f1f5f9;
+            --text-muted: #cbd5e1;
+            --accent: #06b6d4;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a2847 100%);
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 80px 20px 60px;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        /* Container */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            animation: slideUp 0.8s ease 0.3s both;
+        }
+
+        .mission-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .mission-section p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Founders Section */
+        .founders-section {
+            margin: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            animation: slideUp 0.8s ease 0.4s both;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Founders Grid */
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* 3D Glass Card */
+        .founder-card {
+            position: relative;
+            perspective: 1000px;
+            animation: slideUp 0.8s ease both;
+        }
+
+        .founder-card:nth-child(1) { animation-delay: 0.5s; }
+        .founder-card:nth-child(2) { animation-delay: 0.6s; }
+        .founder-card:nth-child(3) { animation-delay: 0.7s; }
+        .founder-card:nth-child(4) { animation-delay: 0.8s; }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px 25px;
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .card-inner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(16, 185, 129, 0.1) 100%);
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .founder-card:hover .card-inner {
+            transform: translateY(-15px) rotateX(5deg) rotateZ(-2deg);
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 
+                0 20px 50px rgba(16, 185, 129, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 100%);
+        }
+
+        .founder-card:hover .card-inner::before {
+            opacity: 1;
+        }
+
+        /* Card Content */
+        .card-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .founder-avatar {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark-bg);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+
+        .founder-avatar::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .founder-card:hover .founder-avatar {
+            transform: scale(1.1) rotateZ(5deg);
+            box-shadow: 0 15px 50px rgba(16, 185, 129, 0.5);
+        }
+
+        .founder-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+
+        .founder-card:hover .founder-name {
+            color: var(--primary-color);
+        }
+
+        .founder-role {
+            font-size: 1rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .founder-bio {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            line-height: 1.6;
+            min-height: 80px;
+        }
+
+        /* Contact Links */
+        .contact-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: var(--primary-color);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease, height 0.4s ease;
+            z-index: -1;
+        }
+
+        .social-link:hover {
+            color: var(--dark-bg);
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        .social-link:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Email Link */
+        .email-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 25px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            white-space: nowrap;
+        }
+
+        .email-link:hover {
+            background: rgba(16, 185, 129, 0.3);
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.2);
+            transform: translateX(3px);
+        }
+
+        /* Values Section */
+        .values-section {
+            margin: 80px 0;
+            padding: 60px 40px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            animation: slideUp 0.8s ease 0.9s both;
+        }
+
+        .values-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .value-item {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .value-item:hover {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.3);
+            transform: translateY(-8px);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .value-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .value-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 80px;
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        footer p {
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+
+            .founders-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .card-inner:hover {
+                transform: translateY(-10px);
+            }
+
+            header {
+                padding: 50px 20px 40px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">🌾 Farmbridge Technologies</div>
+        <h1>Meet Our Founders</h1>
+        <p class="subtitle">Connecting farmers to opportunity through innovation and technology</p>
+    </header>
+
+    <div class="container">
+        <!-- Mission Section -->
+        <section class="mission-section">
+            <h2>Our Mission</h2>
+            <p>At Farmbridge Technologies, we're revolutionizing agricultural commerce by leveraging cutting-edge technology to connect farmers directly with markets, eliminating intermediaries and maximizing farmer profitability while ensuring food security and sustainability.</p>
+        </section>
+
+        <!-- Founders Section -->
+        <section class="founders-section">
+            <h2 class="section-title">Meet the <span>Founders</span></h2>
+            
+            <div class="founders-grid">
+                <!-- Founder 1: Abhigyan Borah -->
+                <div class="founder-card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <div class="founder-avatar">AB</div>
+                            <h3 class="founder-name">Abhigyan Borah</h3>
+                            <p class="founder-role">Co-Founder & CEO</p>
+                            <p class="founder-bio">Visionary leader with expertise in agricultural technology and market dynamics. Drives strategic direction and innovation.</p>
+                            <div class="contact-links">
+                                <a href="mailto:abhigyan@farmbridgetech.com" class="social-link" title="Email" aria-label="Email Abhigyan">✉️</a>
+                                <a href="https://linkedin.com/in/abhigyan-borah" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn Profile">in</a>
+                            </div>
+                            <a href="mailto:abhigyan@farmbridgetech.com" class="email-link">📧 Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Founder 2: Bhaskar Borah -->
+                <div class="founder-card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <div class="founder-avatar">BB</div>
+                            <h3 class="founder-name">Bhaskar Borah</h3>
+                            <p class="founder-role">Co-Founder & CTO</p>
+                            <p class="founder-bio">Technical innovator with deep expertise in IoT, blockchain, and agricultural data analytics. Building the tech backbone.</p>
+                            <div class="contact-links">
+                                <a href="mailto:bhaskar@farmbridgetech.com" class="social-link" title="Email" aria-label="Email Bhaskar">✉️</a>
+                                <a href="https://linkedin.com/in/bhaskar-borah" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn Profile">in</a>
+                            </div>
+                            <a href="mailto:bhaskar@farmbridgetech.com" class="email-link">📧 Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Founder 3: Shekhar Suman Kalita -->
+                <div class="founder-card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <div class="founder-avatar">SK</div>
+                            <h3 class="founder-name">Shekhar Suman Kalita</h3>
+                            <p class="founder-role">Co-Founder & COO</p>
+                            <p class="founder-bio">Operations expert focused on scaling farmer networks and market expansion. Ensures seamless integration across regions.</p>
+                            <div class="contact-links">
+                                <a href="mailto:shekhar@farmbridgetech.com" class="social-link" title="Email" aria-label="Email Shekhar">✉️</a>
+                                <a href="https://linkedin.com/in/shekhar-suman-kalita" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn Profile">in</a>
+                            </div>
+                            <a href="mailto:shekhar@farmbridgetech.com" class="email-link">📧 Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Founder 4: Rajesh K. Hadiya -->
+                <div class="founder-card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <div class="founder-avatar">RH</div>
+                            <h3 class="founder-name">Rajesh K. Hadiya</h3>
+                            <p class="founder-role">Co-Founder & Advisor</p>
+                            <p class="founder-bio">Strategic advisor with extensive experience in agricultural business development and farmer community engagement.</p>
+                            <div class="contact-links">
+                                <a href="mailto:rajesh@farmbridgetech.com" class="social-link" title="Email" aria-label="Email Rajesh">✉️</a>
+                                <a href="https://linkedin.com/in/rajesh-hadiya" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn Profile">in</a>
+                            </div>
+                            <a href="mailto:rajesh@farmbridgetech.com" class="email-link">📧 Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="values-section">
+            <h2><span style="background: linear-gradient(135deg, var(--primary-color), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Our Core Values</span></h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">🌱</div>
+                    <div class="value-title">Sustainability</div>
+                    <div class="value-desc">Committed to promoting eco-friendly farming practices and long-term agricultural viability.</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🤝</div>
+                    <div class="value-title">Farmer-First</div>
+                    <div class="value-desc">Every decision is guided by what benefits farmers most - fair pricing, transparency, and empowerment.</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">💡</div>
+                    <div class="value-title">Innovation</div>
+                    <div class="value-desc">Continuously developing cutting-edge solutions to solve agricultural challenges and unlock new opportunities.</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🔒</div>
+                    <div class="value-title">Trust & Transparency</div>
+                    <div class="value-desc">Building relationships based on honesty, accountability, and open communication with all stakeholders.</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🌍</div>
+                    <div class="value-title">Global Impact</div>
+                    <div class="value-desc">Scaling solutions to reach farmers worldwide while respecting local cultures and agricultural traditions.</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">📈</div>
+                    <div class="value-title">Growth & Prosperity</div>
+                    <div class="value-desc">Enabling farmers to thrive through market access, knowledge sharing, and financial opportunity.</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Farmbridge Technologies. All rights reserved.</p>
+        <p>Empowering farmers. Connecting communities. Building the future of agriculture.</p>
+    </footer>
+
+    <script>
+        // Add smooth scroll behavior
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const elements = document.querySelectorAll('[class*="card"]');
+            
+            elements.forEach((el, index) => {
+                if (el.classList.contains('founder-card')) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.style.opacity = Math.min(1, 1 - (rect.top - window.innerHeight) / window.innerHeight);
+                    }
+                }
+            });
+        });
+
+        // Add ripple effect on card click
+        document.querySelectorAll('.founder-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+
+                this.appendChild(ripple);
+
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Intersection Observer for lazy animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[class*="card"], [class*="section"]').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
